@@ -1,0 +1,39 @@
+<section class="projects-section" id="projects">
+  <div class="section-header">
+    <h2>My Projects</h2>
+    <div class="divider"></div>
+  </div>
+
+  <div class="tabs">
+    <button type="button" [class.active]="tab === 'projects'" (click)="setTab('projects')">Projects</button>
+    <button type="button" [class.active]="tab === 'certificates'" (click)="setTab('certificates')">Certificates</button>
+  </div>
+
+  <div class="cards-grid" *ngIf="tab === 'projects'">
+    <article class="card" *ngFor="let item of projects">
+      <div class="card-body">
+        <h3>{{ item.title }}</h3>
+        <p class="description">{{ item.description }}</p>
+        <div class="tags">
+          <span class="tag" *ngFor="let tag of item.tags">{{ tag }}</span>
+        </div>
+      </div>
+      <div class="card-actions">
+        <a *ngIf="item.live" [href]="item.live" target="_blank" rel="noopener">Live</a>
+        <a *ngIf="item.repo" [href]="item.repo" target="_blank" rel="noopener">Code</a>
+      </div>
+    </article>
+  </div>
+
+  <div class="cards-grid" *ngIf="tab === 'certificates'">
+    <article class="card certificate" *ngFor="let cert of certificates">
+      <div class="card-body">
+        <h3>{{ cert.title }}</h3>
+        <p class="description">Issued by {{ cert.issuer }}</p>
+      </div>
+      <div class="card-actions">
+        <a *ngIf="cert.url" [href]="cert.url" target="_blank" rel="noopener">View</a>
+      </div>
+    </article>
+  </div>
+</section>

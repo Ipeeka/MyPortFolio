@@ -1,0 +1,9 @@
+<aside class="sidebar">
+    <div class="social-icons">
+        <a *ngFor="let social of socialLinks" [href]="social.url" target="_blank" rel="noopener noreferrer"
+            class="social-link" [title]="social.name">
+            <i [class]="social.icon"></i>
+        </a>
+    </div>
+    <div class="vertical-line"></div>
+</aside>

@@ -1,0 +1,12 @@
+<div class="header-wrapper">
+    <nav class="nav">
+        <ng-container *ngFor="let item of navItems; let i = index">
+            <a [href]="'#' + item.toLowerCase()" class="nav-item" [class.active]="navigationService.activeSection() === item.toLowerCase()"
+                (click)="setActive(item.toLowerCase()); $event.preventDefault()">
+                {{ item }}
+                <span class="underline"></span>
+            </a>
+            <span class="separator" *ngIf="i < navItems.length - 1"></span>
+        </ng-container>
+    </nav>
+</div>

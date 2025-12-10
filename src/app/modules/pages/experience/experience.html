@@ -1,0 +1,33 @@
+<section class="experience-section" id="experience">
+  <div class="section-header">
+    <h2>Experience</h2>
+    <div class="divider"></div>
+  </div>
+
+  <div class="experience-layout">
+    <div class="experience-tabs">
+      <button
+        *ngFor="let item of experiences; let i = index"
+        type="button"
+        class="tab"
+        [class.active]="i === activeIndex"
+        (click)="setActive(i)"
+      >
+        <span class="chevron">▸</span>
+        <span class="title">{{ item.role }}</span>
+      </button>
+    </div>
+
+    <div class="experience-card" *ngIf="currentExperience as exp">
+      <div class="card-header">
+        <h3>{{ exp.company }} <span class="icon">🏢</span></h3>
+        <p class="period">{{ exp.period }}</p>
+      </div>
+      <ul class="highlights">
+        <li *ngFor="let point of exp.highlights">
+          {{ point }}
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>

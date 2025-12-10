@@ -1,0 +1,58 @@
+@use "../variables" as *;
+
+.header-wrapper {
+    background-color: $color-secondary;
+    padding: 1.5rem 2rem;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+}
+
+.nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+}
+
+.separator {
+    width: 60px;
+    height: 2px;
+    background-color: $color-primary;
+}
+
+.nav-item {
+    position: relative;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: $font16;
+    font-weight: $fweight500;
+    padding: 0.5rem 0;
+    transition: color 0.3s ease;
+    cursor: pointer;
+}
+
+.nav-item:hover {
+    color: $color-primary;
+}
+
+.underline {
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 2px;
+    background-color: $color-primary;
+    transition: width 0.3s ease;
+}
+
+.nav-item.active {
+    color: $color-primary;
+}
+
+.nav-item.active .underline {
+    width: 100%;
+}

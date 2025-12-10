@@ -1,0 +1,19 @@
+.content {
+    margin-left: 100px;
+    padding-top: calc(70px + 2rem); // Header height + padding
+    padding-right: 2rem;
+    padding-bottom: 2rem;
+    padding-left: 2rem;
+    background-color: #1a1a1a;
+}
+
+.page-section {
+    min-height: 100vh;
+    scroll-margin-top: calc(70px + 2rem); // Offset for fixed header
+}
+
+@media (max-width: 768px) {
+    .content {
+        margin-left: 60px;
+    }
+}

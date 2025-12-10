@@ -1,0 +1,104 @@
+@use "../../../../assets/scss/variables" as *;
+
+.intro-section {
+  min-height: calc(100vh - 140px);
+  display: flex;
+  align-items: center;
+  padding: 4rem 2rem;
+  background-color: #1a1a1a;
+}
+
+.intro-content {
+  max-width: 900px;
+  animation: fadeInUp 1s ease-out;
+}
+
+.greeting {
+  color: #ffffff;
+  font-size: 1.125rem;
+  font-weight: 400;
+  margin-bottom: 1.5rem;
+  opacity: 0;
+  animation: fadeIn 0.8s ease-out 0.2s forwards;
+}
+
+.name {
+  color: $color-primary;
+  font-size: clamp(3rem, 8vw, 5rem);
+  font-weight: 700;
+  margin-bottom: 2rem;
+  line-height: 1.1;
+  opacity: 0;
+  animation: fadeIn 0.8s ease-out 0.4s forwards;
+}
+
+.tagline {
+  color: #ffffff;
+  font-size: clamp(1.5rem, 4vw, 2.5rem);
+  font-weight: 500;
+  margin-bottom: 2.5rem;
+  line-height: 1.4;
+  opacity: 0;
+  animation: fadeIn 0.8s ease-out 0.6s forwards;
+  
+  .highlight {
+    color: $color-primary;
+  }
+}
+
+.description {
+  color: #b0b0b0;
+  font-size: 1.125rem;
+  line-height: 1.8;
+  max-width: 800px;
+  white-space: pre-line;
+  opacity: 0;
+  animation: fadeIn 0.8s ease-out 0.8s forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .intro-section {
+    padding: 3rem 1.5rem;
+  }
+
+  .greeting {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .name {
+    margin-bottom: 1.5rem;
+  }
+
+  .tagline {
+    margin-bottom: 2rem;
+  }
+
+  .description {
+    font-size: 1rem;
+    line-height: 1.7;
+  }
+}
+

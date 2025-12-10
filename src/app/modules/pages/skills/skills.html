@@ -1,0 +1,31 @@
+<section class="skills-section" id="skills">
+  <div class="section-header">
+    <h2>Skills</h2>
+    <div class="divider"></div>
+  </div>
+
+  <div class="skills-layout">
+    <div class="skills-grid">
+      <span class="skill-tag" *ngFor="let skill of skills">{{ skill }}</span>
+    </div>
+
+    <div class="education-card">
+      <h3>Education</h3>
+      <ul>
+        <li *ngFor="let item of education; let i = index">
+          <button type="button" class="edu-toggle" [class.expanded]="item.expanded" (click)="toggleEducation(i)">
+            <span class="chevron">▸</span>
+            <span class="edu-title">{{ item.title }}</span>
+          </button>
+
+          <div class="edu-details" *ngIf="item.expanded">
+            <div class="edu-subtitle" *ngIf="item.degree">{{ item.degree }}</div>
+            <div class="edu-meta" *ngIf="item.duration">
+              {{ item.duration }} <ng-container *ngIf="item.cgpa">— CGPA: {{ item.cgpa }}</ng-container>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>

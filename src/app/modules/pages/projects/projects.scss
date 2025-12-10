@@ -1,0 +1,143 @@
+@use "../../../../assets/scss/variables" as *;
+
+.projects-section {
+  padding: 4rem 2rem;
+  background-color: #1a1a1a;
+  color: #ffffff;
+}
+
+.section-header {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+
+  h2 {
+    font-size: clamp(2rem, 4vw, 2.4rem);
+    font-weight: $fweight700;
+    margin: 0;
+  }
+
+  .divider {
+    flex: 1;
+    height: 2px;
+    background: linear-gradient(to right, #3a3a3a, transparent);
+  }
+}
+
+.tabs {
+  display: inline-flex;
+  background: #0f0f0f;
+  border: 1px solid #3a3a3a;
+  border-radius: $medium-border-radius;
+  overflow: hidden;
+  margin: 0 auto 1.5rem auto;
+  justify-content: center;
+  align-items: center;
+
+  button {
+    padding: 0.75rem 1.5rem;
+    background: transparent;
+    border: none;
+    color: #d4d4d4;
+    font-weight: $fweight700;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    cursor: pointer;
+    transition: background 0.2s ease, color 0.2s ease;
+
+    &.active {
+      background: $color-primary;
+      color: #1a1a1a;
+    }
+
+    &:not(:last-child) {
+      border-right: 1px solid #3a3a3a;
+    }
+  }
+}
+
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.card {
+  background: #111111;
+  border: 1px solid #2d2d2d;
+  border-radius: $medium-border-radius;
+  display: flex;
+  flex-direction: column;
+  min-height: 240px;
+  padding: 1.25rem 1.25rem 0.75rem 1.25rem;
+  transition: border-color 0.2s ease, transform 0.2s ease;
+
+  &:hover {
+    border-color: $color-primary;
+    transform: translateY(-3px);
+  }
+
+  h3 {
+    margin: 0 0 0.5rem 0;
+    color: #ffffff;
+    font-size: 1.1rem;
+  }
+
+  .description {
+    color: #d4d4d4;
+    font-size: 0.95rem;
+    margin: 0 0 0.75rem 0;
+    line-height: 1.5;
+  }
+
+  .tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: auto;
+  }
+
+  .tag {
+    background: #1f1f1f;
+    border: 1px solid #2d2d2d;
+    padding: 0.35rem 0.55rem;
+    border-radius: $border-radius;
+    font-size: 0.85rem;
+    color: $color-primary;
+    font-weight: $fweight700;
+  }
+
+  .card-actions {
+    display: flex;
+    gap: 0.5rem;
+    padding-top: 0.75rem;
+
+    a {
+      color: $color-primary;
+      text-decoration: none;
+      font-weight: $fweight700;
+      font-size: 0.9rem;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+.certificate .card-actions {
+  justify-content: flex-end;
+}
+
+@media (max-width: 1024px) {
+  .cards-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .projects-section {
+    padding: 3rem 1.25rem;
+  }
+}
