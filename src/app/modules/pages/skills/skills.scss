@@ -39,13 +39,15 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
   gap: 1.25rem 1.5rem;
+  justify-items: start;
 }
 
 .skill-tag {
   display: inline-flex;
   align-items: center;
-  justify-content: center;
-  padding: 0.9rem 1.1rem;
+  justify-content: flex-start;
+  font-size: 18px;
+  // padding: 0.9rem 1.1rem;
   // border: 1px solid #3a3a3a;
   // border-radius: $border-radius;
   // background: #111111;
