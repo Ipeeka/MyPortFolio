@@ -1,17 +1,17 @@
 @use "../../../../assets/scss/variables" as *;
 
 .about-section {
-  padding: 4rem 2rem;
+  // padding: 4rem 2rem;
   background-color: #1a1a1a;
   color: #ffffff;
-  min-height: 100vh;
+  // min-height: 100vh;
 }
 
 .section-header {
   display: flex;
   align-items: center;
   gap: 1.5rem;
-  margin-bottom: 2rem;
+  margin-bottom: 3rem;
 
   h2 {
     font-size: clamp(2rem, 4vw, 2.5rem);

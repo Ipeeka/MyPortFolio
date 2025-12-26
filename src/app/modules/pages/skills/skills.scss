@@ -1,7 +1,7 @@
 @use "../../../../assets/scss/variables" as *;
 
 .skills-section {
-  padding: 4rem 2rem;
+  // padding: 4rem 2rem;
   background-color: #1a1a1a;
   color: #ffffff;
 }
@@ -10,7 +10,7 @@
   display: flex;
   align-items: center;
   gap: 1.5rem;
-  margin-bottom: 2rem;
+  margin-bottom: 3rem;
 
   h2 {
     font-size: clamp(2rem, 4vw, 2.5rem);
@@ -46,13 +46,22 @@
   align-items: center;
   justify-content: center;
   padding: 0.9rem 1.1rem;
-  border: 1px solid #3a3a3a;
-  border-radius: $border-radius;
-  background: #111111;
-  color: #f0f0f0;
+  // border: 1px solid #3a3a3a;
+  // border-radius: $border-radius;
+  // background: #111111;
   font-weight: $fweight700;
   letter-spacing: 0.02em;
-  transition: border-color 0.2s ease, transform 0.2s ease;
+  transition:
+    border-color 0.2s ease,
+    transform 0.2s ease;
+
+  &:nth-child(odd) {
+    color: #ffffff;
+  }
+
+  &:nth-child(even) {
+    color: #fbbf24;
+  }
 
   &:hover {
     border-color: $color-primary;
